@@ -26,8 +26,8 @@ public class FraudDetectionJob {
         DataStream<Alert> alerts = transactions
                 .keyBy(Transaction::getAccountId)
                 //.process(new FraudDetector())
-                //.process(new ValueStateFraudDetector())
-                .process(new TimerStateValueStateFraudDetector())
+                .process(new ValueStateFraudDetector())
+                //.process(new TimerStateValueStateFraudDetector())
                 .name("fraud-detector");
 
         alerts

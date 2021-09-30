@@ -29,13 +29,12 @@ public class SocketStreamWordCount {
         //DataStream<String> inputDataStream = env.readTextFile(inputPath);
         DataStream<String> inputDataStream = env.socketTextStream("localhost", 8888);
         // 基于数据流进行转换计算
-        DataStream<Tuple2<String, Integer>> resultStream = inputDataStream.flatMap(new WordCount.MyFlatMapper())
-                //.slotSharingGroup("aq")
+        DataStream<Tuple2<String, Integer>> resultStream = inputDataStream
+                .flatMap(new WordCount.MyFlatMapper())
+                .slotSharingGroup("a")
                 .keyBy(item -> item.f0)
-                .sum(1);
-
-
-                //.setParallelism(2).slotSharingGroup("q");
+                .sum(1)
+                .setParallelism(2).slotSharingGroup("b");
 
         resultStream.print();
 

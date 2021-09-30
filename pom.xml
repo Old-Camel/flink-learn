@@ -109,6 +109,12 @@ under the License.
 			<version>${log4j.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+        <!-- kafka -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka_${scala.binary.version}</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>

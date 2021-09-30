@@ -1,5 +1,7 @@
 package test.flink;
 
+import java.util.Random;
+
 /**
  * Created by IntelliJ IDEA
  * TODO: TODO
@@ -11,7 +13,12 @@ package test.flink;
  */
 public class Testy {
     public static void main(String[] args) {
-        System.out.println("hello world ");
+        //System.out.println("hello world ");
+        Random random = new Random();
+
+        while (true){
+            System.out.println(random.nextGaussian());
+        }
     }
 
 }
