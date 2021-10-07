@@ -15,7 +15,7 @@ object WordCount {
     val env = ExecutionEnvironment.getExecutionEnvironment
 
     // 从文件中读取数据
-    val inputPath = "E:\\documents\\wc.txt"
+    val inputPath = "/Users/xucheng/data/hello.txt"
     val inputDataSet = env.readTextFile(inputPath)
 
     // 分词、转换、求和
